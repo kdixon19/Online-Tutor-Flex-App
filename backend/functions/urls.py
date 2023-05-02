@@ -1,9 +1,9 @@
 from django.urls import path, include
-from linearequations import views
+from functions import views
 
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 urlpatterns = [
-    path('', views.user_linearequations),
-    path('all/', views.get_all_linearequations),
+    path('', views.user_functions),
+    path('all/', views.get_all_functions),
 ]

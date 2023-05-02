@@ -3,7 +3,7 @@ from authentication.models import User
 
 # Create your models here.
 
-class LinearEquation(models.Model):
+class Function(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     function = models.CharField(max_length=30)
     answer = models.CharField(max_length=100)
