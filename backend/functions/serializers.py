@@ -5,5 +5,5 @@ from .models import Function
 class FunctionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Function
-        fields = ['id', 'function', 'answer', 'solution', 'tips', 'user_id']
+        fields = ['id', 'function', 'answer', 'solution', 'tips', 'classification', 'user_id']
         depth = 1
