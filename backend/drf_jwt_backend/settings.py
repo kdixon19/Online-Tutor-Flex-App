@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
-    'cars.apps.CarsConfig',  # This app is for example use only
+    'cars.apps.CarsConfig',
+    'classifications.apps.ClassificationsConfig',
+    'functions.apps.FunctionsConfig',
     
 ]
 
