@@ -6,7 +6,7 @@ from classifications.models import Classification
 
 class Function(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    function = models.TextField()
+    problem = models.TextField()
     answer = models.CharField(max_length=100)
     solution = models.TextField()
     tips = models.TextField()
