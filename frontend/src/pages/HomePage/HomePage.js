@@ -3,6 +3,8 @@ import React from "react";
 // import useAuth from "../../hooks/useAuth";
 import "./HomePage.css"
 import CompletionTracker from "../../components/ProgressTracker/ProgressTracker"
+import { Link } from 'react-router-dom';
+
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -31,6 +33,7 @@ const HomePage = () => {
           <CompletionTracker />
         </tbody>
       </table>
+      <Link to="/question">Question</Link>
     </div>
   );
 };

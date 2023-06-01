@@ -6,7 +6,7 @@ const ProgressTracker = (props) => {
   const data = [
     ["Progress", "Beginning", "Now"],
     ["Two-Step Equations", 5, 10],
-    ["Inequalities", 0, 8],
+    ["Inequalities", 1, 8],
     ["Mean/Median/Mode", 1, 11],
   ];
 
