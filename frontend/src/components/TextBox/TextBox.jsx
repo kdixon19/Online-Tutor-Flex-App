@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const TextBox = () => {
 
-    const [value, setValue] = useState('Type your Answer here...');
+    const [value, setValue] = useState('');
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -10,7 +10,9 @@ const TextBox = () => {
 
     return (
         <div>
+            <label>Enter your Answer here...</label>
             <input type='text' value={value} onChange={handleChange} />
+            <button>submit</button>
         </div>
       );
 }

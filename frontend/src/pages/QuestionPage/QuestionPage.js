@@ -1,11 +1,47 @@
+import React, { useState } from "react";
+
 const QuestionPage = () => {
-    return ( 
+  const [answer, setAnswer] = useState("");
+  const [isCorrect, setIsCorrect] = useState(false);
+
+  const handleAnswerChange = (event) => {
+    setAnswer(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Check if the answer is correct
+    const correctAnswer = "7"; // Expected correct answer
+    const isAnswerCorrect = answer.toLowerCase() === correctAnswer.toLowerCase();
+
+    // Set the correctness state
+    setIsCorrect(isAnswerCorrect);
+
+    // Reset the input field
+    setAnswer("");
+  };
+
+  const question = "What is the 5+2?";
+
+  return (
+    <div>
+      <h3>Question: {question}</h3>
+      <form onSubmit={handleSubmit}>
         <div>
-            <h1>
-                Question Page!
-            </h1>
+          <label htmlFor="answer">Answer:</label>
+          <input
+            type="text"
+            id="answer"
+            value={answer}
+            onChange={handleAnswerChange}
+          />
         </div>
-     );
-}
- 
+        <button type="submit">Submit</button>
+      </form>
+      {isCorrect && <p>Correct answer!</p>}
+      {!isCorrect && isCorrect !== null && <p>Incorrect answer!</p>}
+    </div>
+  );
+};
+
 export default QuestionPage;
