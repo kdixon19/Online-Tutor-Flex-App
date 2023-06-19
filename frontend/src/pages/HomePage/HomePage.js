@@ -4,6 +4,7 @@ import React from "react";
 import "./HomePage.css"
 import ProgressTracker from "../../components/ProgressTracker/ProgressTracker"
 import { Link } from 'react-router-dom';
+import MotivationMessage from "../../components/MotivationalMessage/MotivationalMessage";
 
 
 const HomePage = ({correctCounter}) => {
@@ -21,6 +22,7 @@ const HomePage = ({correctCounter}) => {
       </table>
       <Link to="/question">Question</Link>
       <Link to="/video">Tutorial</Link>
+      <MotivationMessage correctCounter={correctCounter} />
     </div>
   );
 };
