@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const QuestionPage = () => {
+const QuestionPage = ({ incrementCounter }) => {
   const [answer, setAnswer] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -19,9 +19,14 @@ const QuestionPage = () => {
 
     // Reset the input field
     setAnswer("");
+
+    // Increment the Correct Counter
+    if (isAnswerCorrect) {
+      incrementCounter();
+    }
   };
 
-  const question = "What is the 5+2?";
+  const question = "What is 5 + 2?";
 
   return (
     <div>

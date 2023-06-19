@@ -1,38 +1,29 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 
-const ProgressTracker = (props) => {
-
+function ProgressTracker({ correctCounter }) {
   const data = [
-    ["Progress", "Beginning", "Now"],
-    ["Two-Step Equations", 5, 10],
-    ["Inequalities", 1, 8],
-    ["Mean/Median/Mode", 1, 11],
+    ["Question", "Progress"],
+    ["Question", correctCounter], // Use correctCounter prop as the progress value
+    // Add more data points as needed
   ];
 
   const options = {
-      title: "Your Progress over Time",
-    chartArea: { width: "50%" },
-    hAxis: {
-      title: "Progress",
-      minValue: 0,
-    },
-    vAxis: {
-      title: "Classification",
-    },
+    title: "Progress",
+    colors: ["steelblue"],
+    // Add more customization options as needed
   };
 
-    return ( 
-        <div>
-          <Chart
-      chartType="BarChart"
-      width="100%"
-      height="400px"
+  return (
+    <Chart
+      width={"100%"}
+      height={"300px"}
+      chartType="Bar"
+      loader={<div>Loading Chart</div>}
       data={data}
       options={options}
-    />    
-        </div>
-     );
-};
- 
+    />
+  );
+}
+
 export default ProgressTracker;

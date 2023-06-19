@@ -9,19 +9,25 @@ import HomePage from "./pages/HomePage/HomePage";
 import QuestionPage from "./pages/QuestionPage/QuestionPage";
 
 // Component Imports
-import Navbar from "./components/NavBar/NavBar";
-
-// Util Imports
+import NavBar from "./components/NavBar/NavBar";
+import { useState } from "react";
 
 function App() {
+  // CorrectCounter
+  const [correctCounter, setCorrectCounter] = useState(0);
+
+  const incrementCounter = () => {
+    setCorrectCounter(correctCounter + 1);
+  };
+
   return (
     <div>
-      <Navbar />
+      <NavBar />
       <Routes>
-        <Route path="/*" element={<HomePage />} />
+        <Route path="/*" element={<HomePage correctCounter={correctCounter} />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/question" element={<QuestionPage />} />
+        <Route path="/question" element={<QuestionPage incrementCounter={incrementCounter} />} />
       </Routes>
     </div>
   );
