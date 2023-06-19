@@ -14,15 +14,13 @@ const HomePage = ({correctCounter}) => {
 
   return (
     <div className="container">
-      <h1>
-      WHAT WOULD YOU LIKE TO WORK ON TODAY
-      </h1>
       <table>
         <tbody>
           <ProgressTracker correctCounter={correctCounter} />
         </tbody>
       </table>
       <Link to="/question">Question</Link>
+      <Link to="/video">Tutorial</Link>
     </div>
   );
 };
